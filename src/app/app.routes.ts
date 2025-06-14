@@ -8,6 +8,6 @@ export const routes: Routes = [
     { path: '', redirectTo: '/signin', pathMatch: 'full' },
     {path:"signup", component:SignupComponent, title: "Sign up page"},
     {path:"signin", component:SigninComponent, title: "Sign in page"},
-    {path:"note", component:NotesComponent, title: "Notes page"},
+    {path:"notes", component:NotesComponent, title: "Notes page"},
     {path:"**", component:NotfoundComponent, title:"Not found Path"}
 ];

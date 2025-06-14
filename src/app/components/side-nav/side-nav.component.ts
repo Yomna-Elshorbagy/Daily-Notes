@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthService } from '../../core/services/auth.service';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css',
 })
-export class SideNavComponent {}
+export class SideNavComponent {
+  readonly authService = inject(AuthService)
+}

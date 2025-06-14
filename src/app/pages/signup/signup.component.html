@@ -124,7 +124,7 @@
           <div
             class="d-flex justify-content-center align-items-center flex-column"
           >
-            <button class="btn btn-danger">
+            <button class="btn btn-danger" [disabled]="registerForm.invalid">
               @if (isLoading) {
               <i class="fa fa-spinner fa-spin"></i>
               } @if (!isLoading) {
@@ -133,7 +133,7 @@
             </button>
             <p class="my-3">
               Already Have an account?
-              <a class="text-info">Signin</a>
+              <a class="text-info" [routerLink]="['/signin']">Signin</a>
             </p>
           </div>
         </form>
