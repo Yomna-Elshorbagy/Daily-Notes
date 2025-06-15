@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { AuthService } from './../../core/services/auth.service';
 import { Component, inject } from '@angular/core';
 import {
@@ -10,13 +11,14 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule, CommonModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
+  showAnimation = false;
 
   apiError: string = '';
   isLoading: boolean = false;
@@ -51,5 +53,10 @@ export class SignupComponent {
         this.isLoading = false;
       },
     });
+  }
+  ngOnInit() {
+    setTimeout(() => {
+      this.showAnimation = true;
+    }, 1000);
   }
 }

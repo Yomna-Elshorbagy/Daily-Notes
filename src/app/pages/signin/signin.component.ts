@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule, CommonModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css',
 })
@@ -20,6 +21,7 @@ export class SigninComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
   isLoading: boolean = false;
+  showAnimation = false;
 
   loginForm: FormGroup = this.formbuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -39,5 +41,10 @@ export class SigninComponent {
         console.log(err);
       },
     });
+  }
+  ngOnInit() {
+    setTimeout(() => {
+      this.showAnimation = true;
+    }, 1000);
   }
 }

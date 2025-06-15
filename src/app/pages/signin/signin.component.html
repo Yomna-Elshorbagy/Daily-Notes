@@ -1,7 +1,10 @@
 <section class="sign-in d-flex align-items-center vh-100">
   <div class="container boxShadow">
     <div class="signin-content row">
-      <div class="signin-image d-flex justify-content-center col-md-6">
+      <div
+        class="signin-image d-flex justify-content-center col-md-6"
+        [ngClass]="{ 'animate__animated animate__fadeInLeft': showAnimation }"
+      >
         <figure>
           <img src="images/signin-image.jpg" alt="sing in image" />
         </figure>

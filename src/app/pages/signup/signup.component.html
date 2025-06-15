@@ -138,7 +138,10 @@
           </div>
         </form>
       </div>
-      <div class="signup-image col-md-6 d-flex justify-content-center">
+      <div
+        class="signup-image col-md-6 d-flex justify-content-center"
+        [ngClass]="{ 'animate__animated animate__fadeInRight': showAnimation }"
+      >
         <figure>
           <img src="images/signup-image.jpg" alt="sing up image" />
         </figure>
